@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="WidgetText">
+        <item name="android:textColor">@color/american_dark_blue_grey</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="WidgetDiv">
+        <item name="android:background">@color/light_gray</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0dip</item>
+        <item name="android:layout_marginLeft">@dimen/widget_mbp_view_padding</item>
+        <item name="android:layout_marginRight">@dimen/widget_mbp_view_padding</item>
+    </style>
+    <style name="WidgetText.Button" parent="@style/WidgetText">
+        <item name="android:textSize">@dimen/widget_button_text_size</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/widget_button</item>
+        <item name="android:paddingTop">8.0dip</item>
+        <item name="android:paddingBottom">8.0dip</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_marginTop">10.0dip</item>
+        <item name="android:layout_marginBottom">10.0dip</item>
+        <item name="android:layout_weight">10.0</item>
+    </style>
+    <style name="WidgetText.Data" parent="@style/WidgetText">
+        <item name="android:textSize">@dimen/widget_flight_data_text_size</item>
+        <item name="android:layout_marginTop">-3.0dip</item>
+    </style>
+    <style name="WidgetText.Label" parent="@style/WidgetText">
+        <item name="android:textSize">@dimen/widget_flight_data_labels_text_size</item>
+    </style>
+    <style name="WidgetText.Selectable" parent="@style/WidgetText">
+        <item name="android:textSize">@dimen/widget_airport_code_text_size</item>
+        <item name="android:textColor">@color/btn_material_flat_text</item>
+        <item name="android:background">@drawable/bg_light_transparent_selectable</item>
+    </style>
+
+</resources>

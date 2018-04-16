@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#68a39b9b"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/widgetTitleLabel"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:padding="@dimen/widget_margin">
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_weight="0.15"
+                android:background="@color/colorWhite"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/row_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/aa_logo"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="#26a39b9b">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_weight="0.60"
+                android:background="@color/colorWhite"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/flight_det"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ticket2"
+                    />
+                <!--<TextView
+                        android:id="@+id/txtViewName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:textColor="@android:color/white" />-->
+
+                <!--<TextView
+                    android:id="@+id/txtViewInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dip"
+                    android:text="Info"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="@android:color/holo_blue_dark" />-->
+                <!--<TextView android:layout_width="match_parent"
+                    android:id="@+id/widgetTitleLabel"
+                    android:text="@string/title_collection_widget"
+                    android:textColor="@color/colorWhite"
+                    android:background="#9f3f51b5"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:layout_height="@dimen/widget_title_min_height"></TextView>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="#26a39b9b">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_weight="0.10"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtViewWaitTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:text="55 mins"
+                    android:background="@color/colorWhite"
+                    android:gravity="center"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#26a39b9b">
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <ListView android:id="@+id/widgetListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#26a39b9b"
+            android:dividerHeight="1.5dp"
+            android:divider="#26a39b9b"
+            tools:listitem="@layout/list_widget"></ListView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#26a39b9b">
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="50dip">
+        <ImageView
+            android:id="@+id/can_sch_flt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bckgrnd6"
+            android:padding="2dp"
+            android:src="@drawable/reschedule"/>
+        <LinearLayout
+            android:layout_width="2dip"
+            android:layout_height="match_parent"
+            android:background="#26a39b9b">
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/talk_agent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:background="@drawable/btn_bckgrnd6"
+            android:src="@drawable/chat_agent"/>
+        <LinearLayout
+            android:layout_width="2dip"
+            android:layout_height="match_parent"
+            android:background="#26a39b9b">
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/aa_com"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bckgrnd6"
+            android:src="@drawable/aa_flight_icon"/>
+    </LinearLayout>
+
+</LinearLayout>

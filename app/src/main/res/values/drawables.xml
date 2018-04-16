@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="background_gray_highlight">@color/background_gray_highlight</item>
+    <item type="drawable" name="background_gray_light">@color/background_gray_light</item>
+    <item type="drawable" name="cursus_transparent">@android:color/transparent</item>
+    <item type="drawable" name="cursus_white">@color/cursus_white</item>
+    <item type="drawable" name="notification_template_icon_bg">#3333b5e5</item>
+    <item type="drawable" name="notification_template_icon_low_bg">#0cffffff</item>
+    <item type="drawable" name="primaryColor_green">@color/primaryColor_green</item>
+</resources>
