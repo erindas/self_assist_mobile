@@ -1,0 +1,492 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!--<dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>-->
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+    <!--
+Refer to App Widget Documentation for margin information
+http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
+    <!--<dimen name="widget_margin">8dp</dimen>-->
+
+    <dimen name="widget_title_min_height">50dp</dimen>
+    <dimen name="widget_listview_padding_x">16dp</dimen>
+    <dimen name="widget_listview_item_height">45dp</dimen>
+
+    <item type="dimen" name="home_toolbar_size_expanded">@dimen/action_bar_size_x2</item>
+    <dimen name="home_toolbar_title_expanded_margin_bottom">56.0dip</dimen>
+    <dimen name="abc_alert_dialog_button_bar_height">48.0dip</dimen>
+    <dimen name="flight_card_traveler_info_margin_top">46.0dip</dimen>
+    <dimen name="confirmation_clock_max_height">80.0dip</dimen>
+    <dimen name="confirmation_text_size_medium">8.0sp</dimen>
+    <dimen name="confirmation_text_size_xlarge">14.0sp</dimen>
+    <dimen name="confirmation_text_size_xxlarge">15.0sp</dimen>
+    <dimen name="confirmation_text_size_xxxlarge">16.0sp</dimen>
+    <!--<dimen name="widget_airport_code_text_size">26.0dip</dimen>
+    <dimen name="widget_button_text_size">12.0dip</dimen>
+    <dimen name="widget_flight_data_labels_text_size">10.0dip</dimen>
+    <dimen name="widget_flight_data_text_size">16.0dip</dimen>
+    <dimen name="widget_header_text_size">16.0dip</dimen>
+    <dimen name="widget_logo_padding">8.0dip</dimen>-->
+    <dimen name="abc_action_bar_default_height_material">56.0dip</dimen>
+    <dimen name="abc_action_bar_progress_bar_size">40.0dip</dimen>
+    <dimen name="abc_text_size_subtitle_material_toolbar">16.0dip</dimen>
+    <dimen name="abc_text_size_title_material_toolbar">20.0dip</dimen>
+    <dimen name="login_logo_margin_top_bottom">50.0dip</dimen>
+    <dimen name="nav_draw_header_height">152.0dip</dimen>
+    <dimen name="text_size_title_material_toolbar">20.0sp</dimen>
+    <dimen name="travel_alert_left_margin">10.0dip</dimen>
+    <dimen name="travel_alert_right_margin">27.0dip</dimen>
+    <dimen name="widget_mbp_bottom_row_padding">5.0dip</dimen>
+    <item type="dimen" name="widget_mbp_logo_padding_right_left">@dimen/widget_logo_padding</item>
+    <item type="dimen" name="widget_mbp_logo_padding_top_bottom">@dimen/widget_logo_padding</item>
+    <dimen name="widget_mbp_operator_left_margin">0.0dip</dimen>
+    <dimen name="widget_mbp_seat_left_margin">0.0dip</dimen>
+    <dimen name="widget_mbp_view_padding">15.0dip</dimen>
+    <dimen name="abc_config_prefDialogWidth">320.0dip</dimen>
+    <item type="dimen" name="abc_dialog_fixed_height_major">79.99999%</item>
+    <item type="dimen" name="abc_dialog_fixed_height_minor">100.0%</item>
+    <dimen name="abc_dialog_fixed_width_major">320.0dip</dimen>
+    <dimen name="abc_dialog_fixed_width_minor">320.0dip</dimen>
+    <item type="dimen" name="abc_dialog_min_width_major">65.0%</item>
+    <item type="dimen" name="abc_dialog_min_width_minor">95.00001%</item>
+    <dimen name="splash_progress_text_size">20.0sp</dimen>
+    <dimen name="changeseat_kart_border_height">0.20000005dip</dimen>
+    <dimen name="changeseat_kart_checkout_button_font_size">18.0sp</dimen>
+    <dimen name="changeseat_kart_height">60.0dip</dimen>
+    <dimen name="changeseat_kart_item_button_font_size">20.0sp</dimen>
+    <dimen name="changeseat_kart_item_button_padding_size">2.0dip</dimen>
+    <dimen name="changeseat_kart_item_button_size">40.0dip</dimen>
+    <dimen name="changeseat_kart_padding_size">10.0dip</dimen>
+    <dimen name="changeseat_kart_price_button_font_size">20.0sp</dimen>
+    <dimen name="esq_circle_diameter">96.0dip</dimen>
+    <dimen name="esq_stroke_width">7.0dip</dimen>
+    <dimen name="padding_huge">24.0dip</dimen>
+    <dimen name="padding_large">12.0dip</dimen>
+    <dimen name="padding_medium">8.0dip</dimen>
+    <dimen name="padding_small">4.0dip</dimen>
+    <dimen name="padding_ten">10.0dip</dimen>
+    <dimen name="padding_very_large">18.0dip</dimen>
+    <dimen name="textsize_huge">28.0sp</dimen>
+    <dimen name="textsize_large">18.0sp</dimen>
+    <dimen name="textsize_medium">14.0sp</dimen>
+    <dimen name="textsize_medium_large">16.0sp</dimen>
+    <dimen name="textsize_small">12.0sp</dimen>
+    <dimen name="textsize_super_large">22.0sp</dimen>
+    <dimen name="textsize_tiny">4.0sp</dimen>
+    <dimen name="textsize_very_huge">40.0sp</dimen>
+    <dimen name="textsize_very_large">20.0sp</dimen>
+    <dimen name="abc_action_bar_content_inset_material">16.0dip</dimen>
+    <dimen name="abc_action_bar_content_inset_with_nav">72.0dip</dimen>
+    <dimen name="abc_action_bar_default_padding_end_material">0.0dip</dimen>
+    <dimen name="abc_action_bar_default_padding_start_material">0.0dip</dimen>
+    <dimen name="design_navigation_max_width">280.0dip</dimen>
+    <dimen name="design_snackbar_action_inline_max_width">128.0dip</dimen>
+    <dimen name="design_snackbar_background_corner_radius">0.0dip</dimen>
+    <dimen name="design_snackbar_extra_spacing_horizontal">0.0dip</dimen>
+    <dimen name="design_snackbar_max_width">-1.0px</dimen>
+    <dimen name="design_snackbar_min_width">-1.0px</dimen>
+    <dimen name="design_snackbar_padding_vertical_2lines">24.0dip</dimen>
+    <dimen name="design_tab_scrollable_min_width">72.0dip</dimen>
+    <dimen name="app_bar_top_padding">0.0dip</dimen>
+    <dimen name="list_group_padding">8.0dip</dimen>
+    <dimen name="notification_right_side_padding_top">2.0dip</dimen>
+    <dimen name="padding_checkbox">48.0dip</dimen>
+    <dimen name="abc_switch_padding">3.0dip</dimen>
+    <dimen name="profile_pic_margin_top">6.0dip</dimen>
+    <dimen name="notification_content_margin_start">8.0dip</dimen>
+    <dimen name="notification_main_column_padding_top">10.0dip</dimen>
+    <item type="dimen" name="notification_media_narrow_margin">@dimen/notification_content_margin_start</item>
+    <dimen name="spinner_dropdown_vertical_offset">0.0dip</dimen>
+    <dimen name="activity_horizontal_margin">16.0dip</dimen>
+    <dimen name="aa_button_height">44.0dip</dimen>
+    <dimen name="abc_action_bar_elevation_material">4.0dip</dimen>
+    <dimen name="abc_action_bar_icon_vertical_padding_material">16.0dip</dimen>
+    <dimen name="abc_action_bar_overflow_padding_end_material">10.0dip</dimen>
+    <dimen name="abc_action_bar_overflow_padding_start_material">6.0dip</dimen>
+    <dimen name="abc_action_bar_stacked_max_height">48.0dip</dimen>
+    <dimen name="abc_action_bar_stacked_tab_max_width">180.0dip</dimen>
+    <dimen name="abc_action_bar_subtitle_bottom_margin_material">5.0dip</dimen>
+    <dimen name="abc_action_bar_subtitle_top_margin_material">-3.0dip</dimen>
+    <dimen name="abc_action_button_min_height_material">48.0dip</dimen>
+    <dimen name="abc_action_button_min_width_material">48.0dip</dimen>
+    <dimen name="abc_action_button_min_width_overflow_material">36.0dip</dimen>
+    <item type="dimen" name="abc_button_inset_horizontal_material">@dimen/abc_control_inset_material</item>
+    <dimen name="abc_button_inset_vertical_material">6.0dip</dimen>
+    <dimen name="abc_button_padding_horizontal_material">8.0dip</dimen>
+    <item type="dimen" name="abc_button_padding_vertical_material">@dimen/abc_control_padding_material</item>
+    <dimen name="abc_cascading_menus_min_smallest_width">720.0dip</dimen>
+    <dimen name="abc_control_corner_material">2.0dip</dimen>
+    <dimen name="abc_control_inset_material">4.0dip</dimen>
+    <dimen name="abc_control_padding_material">4.0dip</dimen>
+    <dimen name="abc_dialog_list_padding_bottom_no_buttons">8.0dip</dimen>
+    <dimen name="abc_dialog_list_padding_top_no_title">8.0dip</dimen>
+    <dimen name="abc_dialog_padding_material">24.0dip</dimen>
+    <dimen name="abc_dialog_padding_top_material">18.0dip</dimen>
+    <dimen name="abc_dialog_title_divider_material">8.0dip</dimen>
+    <item type="dimen" name="abc_disabled_alpha_material_dark">0.3</item>
+    <item type="dimen" name="abc_disabled_alpha_material_light">0.26</item>
+    <dimen name="abc_dropdownitem_icon_width">32.0dip</dimen>
+    <dimen name="abc_dropdownitem_text_padding_left">8.0dip</dimen>
+    <dimen name="abc_dropdownitem_text_padding_right">8.0dip</dimen>
+    <dimen name="abc_edit_text_inset_bottom_material">7.0dip</dimen>
+    <dimen name="abc_edit_text_inset_horizontal_material">4.0dip</dimen>
+    <dimen name="abc_edit_text_inset_top_material">10.0dip</dimen>
+    <dimen name="abc_floating_window_z">16.0dip</dimen>
+    <item type="dimen" name="abc_list_item_padding_horizontal_material">@dimen/abc_action_bar_content_inset_material</item>
+    <dimen name="abc_panel_menu_list_width">296.0dip</dimen>
+    <dimen name="abc_progress_bar_height_material">4.0dip</dimen>
+    <dimen name="abc_search_view_preferred_height">48.0dip</dimen>
+    <dimen name="abc_search_view_preferred_width">320.0dip</dimen>
+    <dimen name="abc_seekbar_track_background_height_material">2.0dip</dimen>
+    <dimen name="abc_seekbar_track_progress_height_material">2.0dip</dimen>
+    <dimen name="abc_select_dialog_padding_start_material">20.0dip</dimen>
+    <dimen name="abc_text_size_body_1_material">14.0sp</dimen>
+    <dimen name="abc_text_size_body_2_material">14.0sp</dimen>
+    <dimen name="abc_text_size_button_material">14.0sp</dimen>
+    <dimen name="abc_text_size_caption_material">12.0sp</dimen>
+    <dimen name="abc_text_size_display_1_material">34.0sp</dimen>
+    <dimen name="abc_text_size_display_2_material">45.0sp</dimen>
+    <dimen name="abc_text_size_display_3_material">56.0sp</dimen>
+    <dimen name="abc_text_size_display_4_material">112.0sp</dimen>
+    <dimen name="abc_text_size_headline_material">24.0sp</dimen>
+    <dimen name="abc_text_size_large_material">22.0sp</dimen>
+    <dimen name="abc_text_size_medium_material">18.0sp</dimen>
+    <dimen name="abc_text_size_menu_header_material">14.0sp</dimen>
+    <dimen name="abc_text_size_menu_material">16.0sp</dimen>
+    <dimen name="abc_text_size_small_material">14.0sp</dimen>
+    <dimen name="abc_text_size_subhead_material">16.0sp</dimen>
+    <dimen name="abc_text_size_title_material">20.0sp</dimen>
+    <dimen name="action_bar_size_x2">112.0dip</dimen>
+    <dimen name="action_bar_size_x3">168.0dip</dimen>
+    <dimen name="action_view_content_bottom_padding">100.0dip</dimen>
+    <dimen name="action_view_divider_height">15.0dip</dimen>
+    <dimen name="action_view_general_text_size">18.0sp</dimen>
+    <dimen name="action_view_handle_height">26.0dip</dimen>
+    <dimen name="action_view_handle_width">48.0dip</dimen>
+    <dimen name="action_view_key_text_size">16.5sp</dimen>
+    <dimen name="action_view_peek_height">130.0dip</dimen>
+    <dimen name="activity_vertical_margin">16.0dip</dimen>
+    <dimen name="airport_row_current_location_section_height">96.0dip</dimen>
+    <dimen name="airport_row_heading_height">24.0dip</dimen>
+    <dimen name="airport_row_ident_margin_left">24.0dip</dimen>
+    <dimen name="airport_row_item_height">40.0dip</dimen>
+    <dimen name="airport_row_menu_enabled_indicator_diameter">10.0dip</dimen>
+    <dimen name="airport_row_menu_enabled_indicator_margin_left">8.0dip</dimen>
+    <dimen name="airport_row_menu_enabled_indicator_margin_right">4.0dip</dimen>
+    <dimen name="airport_row_name_margin_left">80.0dip</dimen>
+    <dimen name="app_bar_height_big">176.0dip</dimen>
+    <dimen name="app_bar_height_small">56.0dip</dimen>
+    <dimen name="booking_field_size">15.0sp</dimen>
+    <item type="dimen" name="button_inset_horizontal_material">@dimen/control_inset_material</item>
+    <dimen name="button_inset_vertical_material">6.0dip</dimen>
+    <dimen name="button_padding_horizontal_material">8.0dip</dimen>
+    <item type="dimen" name="button_padding_vertical_material">@dimen/control_padding_material</item>
+    <dimen name="calendar_month_day_size">30.0dip</dimen>
+    <dimen name="cardview_compat_inset_shadow">1.0dip</dimen>
+    <dimen name="cardview_default_elevation">2.0dip</dimen>
+    <dimen name="cardview_default_radius">2.0dip</dimen>
+    <dimen name="cart_card_horizontal_margin">4.0dip</dimen>
+    <dimen name="cart_card_vertical_spacing">0.0dip</dimen>
+    <dimen name="cart_options_left_margin">24.0dip</dimen>
+    <dimen name="cart_options_special_instructions_icon_right_margin">4.0dip</dimen>
+    <dimen name="cart_prices_right_margin">16.0dip</dimen>
+    <dimen name="cart_title_left_margin">16.0dip</dimen>
+    <dimen name="cart_title_top_margin">12.0dip</dimen>
+    <dimen name="cart_totals_bottom_margin">16.0dip</dimen>
+    <dimen name="cart_totals_item_list_vertical_margin">4.0dip</dimen>
+    <dimen name="cart_totals_right_margin">24.0dip</dimen>
+    <dimen name="cart_totals_top_margin">8.0dip</dimen>
+    <dimen name="changeseat_upperbar_elevation">5.0dip</dimen>
+    <dimen name="city_to_arrow_collapsed_margin">15.0dip</dimen>
+    <dimen name="city_to_arrow_margin">36.0dip</dimen>
+    <dimen name="compat_button_inset_horizontal_material">4.0dip</dimen>
+    <dimen name="compat_button_inset_vertical_material">6.0dip</dimen>
+    <dimen name="compat_button_padding_horizontal_material">8.0dip</dimen>
+    <dimen name="compat_button_padding_vertical_material">4.0dip</dimen>
+    <dimen name="compat_control_corner_material">2.0dip</dimen>
+    <dimen name="control_corner_material">2.0dip</dimen>
+    <dimen name="control_inset_material">4.0dip</dimen>
+    <dimen name="control_padding_material">4.0dip</dimen>
+    <dimen name="defaultTitleMarginStart">15.0dip</dimen>
+    <dimen name="default_button_corner_radius">5.0dip</dimen>
+    <dimen name="default_gap">8.0dip</dimen>
+    <dimen name="design_appbar_elevation">4.0dip</dimen>
+    <dimen name="design_bottom_navigation_active_item_max_width">168.0dip</dimen>
+    <dimen name="design_bottom_navigation_active_text_size">14.0sp</dimen>
+    <dimen name="design_bottom_navigation_elevation">8.0dip</dimen>
+    <dimen name="design_bottom_navigation_height">56.0dip</dimen>
+    <dimen name="design_bottom_navigation_item_max_width">96.0dip</dimen>
+    <dimen name="design_bottom_navigation_item_min_width">56.0dip</dimen>
+    <dimen name="design_bottom_navigation_margin">8.0dip</dimen>
+    <dimen name="design_bottom_navigation_shadow_height">1.0dip</dimen>
+    <dimen name="design_bottom_navigation_text_size">12.0sp</dimen>
+    <dimen name="design_bottom_sheet_modal_elevation">16.0dip</dimen>
+    <dimen name="design_bottom_sheet_peek_height_min">64.0dip</dimen>
+    <dimen name="design_fab_border_width">0.5dip</dimen>
+    <dimen name="design_fab_elevation">6.0dip</dimen>
+    <dimen name="design_fab_image_size">32.0dip</dimen>
+    <dimen name="design_fab_size_mini">40.0dip</dimen>
+    <dimen name="design_fab_size_normal">56.0dip</dimen>
+    <dimen name="design_fab_translation_z_pressed">6.0dip</dimen>
+    <dimen name="design_navigation_elevation">16.0dip</dimen>
+    <dimen name="design_navigation_icon_padding">32.0dip</dimen>
+    <dimen name="design_navigation_icon_size">24.0dip</dimen>
+    <dimen name="design_navigation_padding_bottom">8.0dip</dimen>
+    <dimen name="design_navigation_separator_vertical_padding">8.0dip</dimen>
+    <dimen name="design_snackbar_elevation">6.0dip</dimen>
+    <dimen name="design_snackbar_padding_horizontal">12.0dip</dimen>
+    <dimen name="design_snackbar_padding_vertical">14.0dip</dimen>
+    <dimen name="design_snackbar_text_size">14.0sp</dimen>
+    <dimen name="design_tab_max_width">264.0dip</dimen>
+    <dimen name="design_tab_text_size">14.0sp</dimen>
+    <dimen name="design_tab_text_size_2line">12.0sp</dimen>
+    <dimen name="dialog_order_confirmation_dialog_horiz_margin">15.0dip</dimen>
+    <dimen name="dialog_order_confirmation_dialog_top_margin">15.0dip</dimen>
+    <dimen name="dialog_order_confirmation_totals_margin_left">15.0dip</dimen>
+    <dimen name="dialog_order_confirmation_totals_margin_right">15.0dip</dimen>
+    <item type="dimen" name="disabled_alpha_material_dark">0.3</item>
+    <item type="dimen" name="disabled_alpha_material_light">0.26</item>
+    <item type="dimen" name="esq_label_text_size">@dimen/textsize_medium_large</item>
+    <item type="dimen" name="esq_max_value_text_size">@dimen/textsize_medium</item>
+    <item type="dimen" name="esq_or_text_size">@dimen/textsize_medium</item>
+    <item type="dimen" name="esq_plus_text_size">@dimen/textsize_very_large</item>
+    <item type="dimen" name="esq_status_progress_exp_text_size">@dimen/textsize_medium</item>
+    <item type="dimen" name="esq_value_text_size">@dimen/textsize_very_large</item>
+    <dimen name="exo_media_button_height">52.0dip</dimen>
+    <dimen name="exo_media_button_width">71.0dip</dimen>
+    <dimen name="fab_big_margin_right">20.0dip</dimen>
+    <dimen name="fab_margin">16.0dip</dimen>
+    <dimen name="fab_margin_buttom">16.0dip</dimen>
+    <dimen name="fab_menu_diameter">52.0dip</dimen>
+    <dimen name="fab_menu_text_size">15.0sp</dimen>
+    <dimen name="fab_pace_margin">16.0dip</dimen>
+    <item type="dimen" name="fab_padding_horizontal">@dimen/padding_huge</item>
+    <item type="dimen" name="fab_padding_label">@dimen/padding_large</item>
+    <item type="dimen" name="fab_padding_vertical">@dimen/padding_huge</item>
+    <dimen name="fab_small_margin_right">8.0dip</dimen>
+    <dimen name="fab_text_margin">16.0dip</dimen>
+    <dimen name="facebook_login_button_bottom_margin_override">16.0dip</dimen>
+    <dimen name="facebook_login_button_lr_margin_override">10.0dip</dimen>
+    <dimen name="facebook_login_button_textsize_override">17.0dip</dimen>
+    <dimen name="facebook_login_button_textsize_small_override">12.0sp</dimen>
+    <dimen name="facebook_login_button_top_margin_override">16.0dip</dimen>
+    <dimen name="fastscroll_default_thickness">8.0dip</dimen>
+    <dimen name="fastscroll_margin">0.0dip</dimen>
+    <dimen name="fastscroll_minimum_range">50.0dip</dimen>
+    <dimen name="flight_card_large">32.0sp</dimen>
+    <dimen name="flight_card_line_spacing">3.0sp</dimen>
+    <dimen name="flight_card_med">18.0sp</dimen>
+    <dimen name="flight_card_padding_bottom">48.0dip</dimen>
+    <dimen name="flight_card_padding_left_right">15.0dip</dimen>
+    <dimen name="flight_card_padding_top_bottom">11.0dip</dimen>
+    <dimen name="flight_card_reservation_info_padding_left_default">15.0dip</dimen>
+    <dimen name="flight_card_reservation_info_padding_left_with_icon">48.0dip</dimen>
+    <dimen name="flight_card_small">14.0sp</dimen>
+    <dimen name="flight_card_small_med">15.0sp</dimen>
+    <dimen name="flight_card_tiny">12.0sp</dimen>
+    <dimen name="flight_card_top_margin">13.0dip</dimen>
+    <dimen name="flight_card_xlarge">42.0sp</dimen>
+    <dimen name="flight_number_recent_searches_margin_top">51.0dip</dimen>
+    <dimen name="header_height">50.0dip</dimen>
+    <item type="dimen" name="highlight_alpha_material_colored">0.26</item>
+    <item type="dimen" name="highlight_alpha_material_dark">0.2</item>
+    <item type="dimen" name="highlight_alpha_material_light">0.12</item>
+    <item type="dimen" name="hint_alpha_material_dark">0.5</item>
+    <item type="dimen" name="hint_alpha_material_light">0.38</item>
+    <item type="dimen" name="hint_pressed_alpha_material_dark">0.7</item>
+    <item type="dimen" name="hint_pressed_alpha_material_light">0.54</item>
+    <dimen name="home_bag_row_padding_top_bottom">13.0dip</dimen>
+    <dimen name="home_card_margin_bottom">15.0dip</dimen>
+    <dimen name="home_card_margin_left_right">15.0dip</dimen>
+    <dimen name="home_card_padding_bottom_small">7.0dip</dimen>
+    <dimen name="home_card_padding_left_right">15.0dip</dimen>
+    <dimen name="home_card_padding_top_bottom">11.0dip</dimen>
+    <item type="dimen" name="home_last_updated_fade_distance">@dimen/margin_top</item>
+    <dimen name="home_toolbar_title_expanded_margin_start">56.0dip</dimen>
+    <dimen name="item_text_margin">10.0dip</dimen>
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20.0dip</dimen>
+    <dimen name="item_touch_helper_swipe_escape_max_velocity">800.0dip</dimen>
+    <dimen name="item_touch_helper_swipe_escape_velocity">120.0dip</dimen>
+    <dimen name="layout_margin">15.0dip</dimen>
+    <dimen name="ll_icon_size">24.0dip</dimen>
+    <dimen name="ll_line_spacing_poi_tag">14.0sp</dimen>
+    <dimen name="ll_list_item">70.0dip</dimen>
+    <dimen name="ll_list_result_count_item">24.0dip</dimen>
+    <dimen name="ll_margin_half_horizontal">6.0dip</dimen>
+    <dimen name="ll_margin_half_vertical">8.0dip</dimen>
+    <dimen name="ll_margin_horizontal">12.0dip</dimen>
+    <dimen name="ll_margin_horizontal_negative">-12.0dip</dimen>
+    <dimen name="ll_margin_vertical">16.0dip</dimen>
+    <dimen name="ll_mdu_1">4.0dip</dimen>
+    <dimen name="ll_mdu_10">40.0dip</dimen>
+    <dimen name="ll_mdu_10s">40.0sp</dimen>
+    <dimen name="ll_mdu_11">44.0dip</dimen>
+    <dimen name="ll_mdu_11s">44.0sp</dimen>
+    <dimen name="ll_mdu_12">48.0dip</dimen>
+    <dimen name="ll_mdu_12s">48.0sp</dimen>
+    <dimen name="ll_mdu_13">52.0dip</dimen>
+    <dimen name="ll_mdu_13s">52.0sp</dimen>
+    <dimen name="ll_mdu_14">56.0dip</dimen>
+    <dimen name="ll_mdu_14s">56.0sp</dimen>
+    <dimen name="ll_mdu_15">60.0dip</dimen>
+    <dimen name="ll_mdu_15s">60.0sp</dimen>
+    <dimen name="ll_mdu_16">64.0dip</dimen>
+    <dimen name="ll_mdu_16s">64.0sp</dimen>
+    <dimen name="ll_mdu_17">68.0dip</dimen>
+    <dimen name="ll_mdu_17s">68.0sp</dimen>
+    <dimen name="ll_mdu_18">72.0dip</dimen>
+    <dimen name="ll_mdu_18s">72.0sp</dimen>
+    <dimen name="ll_mdu_19">76.0dip</dimen>
+    <dimen name="ll_mdu_19s">76.0sp</dimen>
+    <dimen name="ll_mdu_1s">4.0sp</dimen>
+    <dimen name="ll_mdu_2">8.0dip</dimen>
+    <dimen name="ll_mdu_20">80.0dip</dimen>
+    <dimen name="ll_mdu_20s">80.0sp</dimen>
+    <dimen name="ll_mdu_21">84.0dip</dimen>
+    <dimen name="ll_mdu_21s">84.0sp</dimen>
+    <dimen name="ll_mdu_22">88.0dip</dimen>
+    <dimen name="ll_mdu_22s">88.0sp</dimen>
+    <dimen name="ll_mdu_23">92.0dip</dimen>
+    <dimen name="ll_mdu_23s">92.0sp</dimen>
+    <dimen name="ll_mdu_24">96.0dip</dimen>
+    <dimen name="ll_mdu_24s">96.0sp</dimen>
+    <dimen name="ll_mdu_25">100.0dip</dimen>
+    <dimen name="ll_mdu_25s">100.0sp</dimen>
+    <dimen name="ll_mdu_2s">8.0sp</dimen>
+    <dimen name="ll_mdu_3">12.0dip</dimen>
+    <dimen name="ll_mdu_3s">12.0sp</dimen>
+    <dimen name="ll_mdu_4">16.0dip</dimen>
+    <dimen name="ll_mdu_4s">16.0sp</dimen>
+    <dimen name="ll_mdu_5">20.0dip</dimen>
+    <dimen name="ll_mdu_5s">20.0sp</dimen>
+    <dimen name="ll_mdu_6">24.0dip</dimen>
+    <dimen name="ll_mdu_6s">24.0sp</dimen>
+    <dimen name="ll_mdu_7">28.0dip</dimen>
+    <dimen name="ll_mdu_7s">28.0sp</dimen>
+    <dimen name="ll_mdu_8">32.0dip</dimen>
+    <dimen name="ll_mdu_8s">32.0sp</dimen>
+    <dimen name="ll_mdu_9">36.0dip</dimen>
+    <dimen name="ll_mdu_9s">36.0sp</dimen>
+    <dimen name="ll_poi_image_height">216.0dip</dimen>
+    <dimen name="ll_poi_image_space_height">70.0dip</dimen>
+    <dimen name="ll_poi_right_space_height">9.0dip</dimen>
+    <dimen name="ll_text_margin_poi_tag">2.0sp</dimen>
+    <dimen name="ll_text_padding_drawable">10.0dip</dimen>
+    <dimen name="ll_text_padding_horizontal">6.0dip</dimen>
+    <dimen name="ll_text_padding_vertical">3.0dip</dimen>
+    <item type="dimen" name="ll_text_size_body">@dimen/ll_text_size_large</item>
+    <dimen name="ll_text_size_huge">20.0sp</dimen>
+    <dimen name="ll_text_size_large">16.0sp</dimen>
+    <dimen name="ll_text_size_normal">14.0sp</dimen>
+    <dimen name="ll_text_size_small">12.0sp</dimen>
+    <item type="dimen" name="ll_text_size_title">@dimen/ll_text_size_very_huge</item>
+    <dimen name="ll_text_size_very_huge">22.0sp</dimen>
+    <dimen name="ll_text_size_very_large">18.0sp</dimen>
+    <item type="dimen" name="margin_top">@dimen/padding_huge</item>
+    <dimen name="nav_draw_header_text_padding">54.0dip</dimen>
+    <dimen name="nav_draw_right_margin">56.0dip</dimen>
+    <dimen name="nav_draw_row_height">48.0dip</dimen>
+    <dimen name="nav_draw_settings_row_height">56.0dip</dimen>
+    <dimen name="nav_draw_side_text_margin">16.0dip</dimen>
+    <dimen name="nav_draw_title_icon_left_margin">16.0dip</dimen>
+    <dimen name="nav_draw_title_text_left_margin">72.0dip</dimen>
+    <dimen name="nav_draw_width">288.0dip</dimen>
+    <dimen name="nav_settings_group_height">100.0dip</dimen>
+    <dimen name="notification_action_icon_size">32.0dip</dimen>
+    <dimen name="notification_action_text_size">13.0sp</dimen>
+    <dimen name="notification_big_circle_margin">12.0dip</dimen>
+    <dimen name="notification_large_icon_height">64.0dip</dimen>
+    <dimen name="notification_large_icon_width">64.0dip</dimen>
+    <dimen name="notification_right_icon_size">16.0dip</dimen>
+    <dimen name="notification_small_icon_background_padding">3.0dip</dimen>
+    <dimen name="notification_small_icon_size_as_large">24.0dip</dimen>
+    <dimen name="notification_subtext_size">13.0sp</dimen>
+    <dimen name="notification_top_pad">10.0dip</dimen>
+    <dimen name="notification_top_pad_large_text">5.0dip</dimen>
+    <dimen name="order_date_height">32.0dip</dimen>
+    <dimen name="order_detail_total_height">32.0dip</dimen>
+    <dimen name="order_hostory_card_buttons_height">40.0dip</dimen>
+    <dimen name="order_row_height">40.0dip</dimen>
+    <dimen name="order_row_text_margin_side">16.0dip</dimen>
+    <dimen name="order_row_text_margin_top">6.0dip</dimen>
+    <dimen name="padding_enroll_checkbox">30.0dip</dimen>
+    <dimen name="padding_larger">14.0dip</dimen>
+    <dimen name="padding_six">6.0dip</dimen>
+    <dimen name="padding_very_huge">30.0dip</dimen>
+    <dimen name="padding_very_small">2.0dip</dimen>
+    <dimen name="page_indicator_selected_size">8.0dip</dimen>
+    <dimen name="page_indicator_size">6.0dip</dimen>
+    <dimen name="passenger_grid_space">4.0dip</dimen>
+    <dimen name="passenger_row_height">44.0dip</dimen>
+    <dimen name="passenger_row_space">6.0dip</dimen>
+    <dimen name="passport_confirmation_editText_height">30.0dip</dimen>
+    <dimen name="passport_overlay_height">220.0dip</dimen>
+    <dimen name="passport_scan_window_height">300.0dip</dimen>
+    <dimen name="passport_scanner_height">60.0dip</dimen>
+    <dimen name="passport_scanner_indicator_width">20.0dip</dimen>
+    <dimen name="profile_pic_diameter">60.0dip</dimen>
+    <dimen name="pull_down_content_padding_leftright">30.0dip</dimen>
+    <dimen name="pull_down_content_padding_topbottom">12.0dip</dimen>
+    <dimen name="reaccom_headers_padding">15.0dip</dimen>
+    <dimen name="reaccom_large">32.0sp</dimen>
+    <dimen name="reaccom_margin">15.0dip</dimen>
+    <dimen name="reaccom_med">21.0sp</dimen>
+    <dimen name="reaccom_small">14.0sp</dimen>
+    <dimen name="reaccom_small_med">15.0sp</dimen>
+    <dimen name="reaccom_tiny">12.0sp</dimen>
+    <dimen name="reaccom_xlarge">42.0sp</dimen>
+    <dimen name="same_day_flight_change_margin">15.0dip</dimen>
+    <dimen name="sdfc_text_margin">15.0dip</dimen>
+    <dimen name="seatmap_column">17.0sp</dimen>
+    <dimen name="seatmap_column_header_height">30.0dip</dimen>
+    <dimen name="seatmap_label">24.0sp</dimen>
+    <dimen name="seatmap_legend_margin">8.0dip</dimen>
+    <dimen name="seatmap_row">17.0sp</dimen>
+    <dimen name="seatmap_start_text_size">14.0sp</dimen>
+    <dimen name="seatmap_terms_space">48.0dip</dimen>
+    <dimen name="sliding_tab_height">40.0dip</dimen>
+    <dimen name="standard_button_height">44.0dip</dimen>
+    <dimen name="store_inventory_header_height">55.0dip</dimen>
+    <dimen name="store_item_height">86.0dip</dimen>
+    <dimen name="store_row_text_vertical_spacing">4.0dip</dimen>
+    <dimen name="text_size_large">16.0sp</dimen>
+    <dimen name="text_size_medium">12.0sp</dimen>
+    <dimen name="text_size_regular">14.0sp</dimen>
+    <dimen name="text_size_small">10.0sp</dimen>
+    <dimen name="text_size_xlarge">18.0sp</dimen>
+    <dimen name="text_size_xsmall">8.0sp</dimen>
+    <dimen name="text_size_xxlarge">20.0sp</dimen>
+    <dimen name="text_size_xxsmall">6.0sp</dimen>
+    <dimen name="text_size_xxxlarge">28.0sp</dimen>
+    <dimen name="textsize_calendar_dayOfMonth">18.0sp</dimen>
+    <dimen name="textsize_calendar_header">15.0sp</dimen>
+    <dimen name="textsize_calendar_title">21.0sp</dimen>
+    <dimen name="textsize_med_huge">32.0sp</dimen>
+    <dimen name="textsize_super_larger">24.0sp</dimen>
+    <dimen name="tipping_default_margin">8.0dip</dimen>
+    <dimen name="tipping_default_margin_half">4.0dip</dimen>
+    <dimen name="tipping_height_forty_percent">40.0dip</dimen>
+    <dimen name="tipping_height_half">50.0dip</dimen>
+    <dimen name="tipping_height_one">100.0dip</dimen>
+    <dimen name="tipping_height_quarter">25.0dip</dimen>
+    <dimen name="tipping_height_sixty_percent">60.0dip</dimen>
+    <dimen name="tipping_height_two">200.0dip</dimen>
+    <dimen name="tooltip_corner_radius">2.0dip</dimen>
+    <dimen name="tooltip_horizontal_padding">16.0dip</dimen>
+    <dimen name="tooltip_margin">8.0dip</dimen>
+    <dimen name="tooltip_precise_anchor_extra_offset">8.0dip</dimen>
+    <dimen name="tooltip_precise_anchor_threshold">96.0dip</dimen>
+    <dimen name="tooltip_vertical_padding">6.5dip</dimen>
+    <dimen name="tooltip_y_offset_non_touch">0.0dip</dimen>
+    <dimen name="tooltip_y_offset_touch">16.0dip</dimen>
+
+    <dimen name="widget_airport_code_text_size">24.0dip</dimen>
+    <dimen name="widget_button_text_size">12.0dip</dimen>
+    <dimen name="widget_flight_data_labels_text_size">10.0dip</dimen>
+    <dimen name="widget_flight_data_text_size">16.0dip</dimen>
+    <dimen name="widget_header_text_size">17.0dip</dimen>
+    <dimen name="widget_logo_padding">5.0dip</dimen>
+</resources>

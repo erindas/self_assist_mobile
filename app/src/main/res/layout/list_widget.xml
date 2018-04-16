@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#26a39b9b"
+    android:padding="@dimen/widget_margin"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/list_items"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white">
+        <!--android:background="@drawable/card_bckgrnd">-->
+
+        <TextView
+            android:id="@+id/status_border"
+            android:layout_width="6dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:background="@color/american_blue" />
+
+        <!--android:backgroundTint="#50FFFFFF"
+        android:backgroundTintMode="src_over">-->
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_weight="0.10"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/row_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/cardview_default_radius"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_checkin"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="10dip"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/line" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_weight="0.60"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtViewName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Tooltip"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/txtViewInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Info"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="10dip"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/line" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_weight="0.10"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtViewWaitTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="20 mins"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
