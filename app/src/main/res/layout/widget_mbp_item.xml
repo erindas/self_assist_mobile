@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/full_widget"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +8,7 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="270px">
+        android:layout_height="134dip">
     <FrameLayout android:id="@+id/widget_empty_view" android:background="@null" android:layout_width="match_parent" android:layout_height="wrap_content">
         <RelativeLayout android:layout_gravity="top" android:background="@color/white_transparent" android:layout_width="match_parent" android:layout_height="wrap_content">
             <TextView android:id="@+id/widget_mbp_top" android:background="@color/american_blue" android:layout_width="fill_parent" android:layout_height="3.0dip" android:layout_alignParentTop="true" />
@@ -29,10 +30,31 @@
                     android:paddingTop="@dimen/widget_mbp_logo_padding_top_bottom"
                     android:src="@drawable/ic_notification_main_small" />
                     <!--android:src="@drawable/ic_logo_widget" />-->
-                <LinearLayout android:orientation="@integer/widget_mbp_lin_layout_orientation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/widget_mbp_logo" android:layout_centerVertical="true">
-                    <TextView android:textSize="@dimen/widget_header_text_size" android:id="@+id/widget_mbp_flight_num" android:text="@string/widget_no_available_boarding" style="@style/WidgetText" />
+                <LinearLayout android:id="@+id/widget_avl_board" android:orientation="@integer/widget_mbp_lin_layout_orientation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/widget_mbp_logo" android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/widget_mbp_flight_num"
+                        style="@style/WidgetText"
+                        android:text="@string/widget_no_available_boarding"
+                        android:textSize="@dimen/widget_header_text_size" />
                     <TextView android:textSize="12.0sp" android:id="@+id/widget_mbp_operator" android:visibility="gone" android:layout_marginLeft="@dimen/widget_mbp_operator_left_margin" style="@style/WidgetText" />
                 </LinearLayout>
+                <LinearLayout android:orientation="@integer/widget_mbp_lin_layout_orientation" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_toRightOf="@+id/widget_mbp_logo" android:layout_centerVertical="true">
+                    <TextView
+                        style="@style/WidgetText"
+                        android:layout_gravity="end"
+                        android:text="Time Required:"
+                        android:textColor="@color/american_dark_blue"
+                        android:textSize="10.0sp" />
+                    <TextView
+                        android:id="@+id/widget_mbp_eta"
+                        style="@style/WidgetText"
+                        android:layout_gravity="end"
+                        android:text="2:30 mins"
+                        android:textColor="@color/american_dark_orange"
+                        android:textSize="14.0sp" />
+                </LinearLayout>
+
             </RelativeLayout>
             <FrameLayout android:id="@+id/widget_mbp_right_arrow_wrapper" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/widget_mbp_view_padding" android:layout_above="@+id/widget_mbp_title_div" android:layout_below="@+id/widget_mbp_top" android:layout_alignParentRight="true">
                 <ImageButton android:layout_gravity="center_vertical" android:id="@+id/widget_mbp_right_arrow" android:background="@drawable/bg_light_transparent_selectable" android:paddingRight="@dimen/widget_mbp_view_padding" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_circle_arrow_right_blue" />
@@ -103,7 +125,7 @@
         android:layout_height="1dp"
         android:background="#26a39b9b">
     </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="80px" android:orientation="horizontal">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="40dip" android:orientation="horizontal">
         <LinearLayout
             android:id="@+id/talk_agent"
             android:orientation="horizontal"
@@ -113,8 +135,8 @@
             android:layout_weight="1"
             android:background="@color/american_blue_dark_medium">
             <ImageView
-                android:layout_width="70px"
-                android:layout_height="70px"
+                android:layout_width="36dip"
+                android:layout_height="36dip"
                 android:padding="4dp"
                 android:layout_gravity="center"
                 android:src="@drawable/chat_agent"/>
@@ -140,8 +162,8 @@
             android:gravity="center"
             android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="70px"
-                    android:layout_height="70px"
+                    android:layout_width="36dip"
+                    android:layout_height="36dip"
                     android:layout_gravity="center"
                     android:padding="2dp"
                     android:src="@drawable/aa_flight_icon" />

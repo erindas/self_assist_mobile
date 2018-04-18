@@ -35,8 +35,7 @@ public class MyWidgetRemoteViewsFactory implements RemoteViewsService.RemoteView
 
     private boolean reqComplete = false;
     private List<ListModel> listDetails;
-    //private final String SERV_URL = "http://17edc5af.ngrok.io/mobile";
-    private final String SERV_URL = "https://hack-wars-5.herokuapp.com/mobile";
+    private final String SERV_URL = AppConstants.REST_URL_WT + "1";
 
     public MyWidgetRemoteViewsFactory(Context applicationContext, Intent intent) {
         mContext = applicationContext;
@@ -70,16 +69,18 @@ public class MyWidgetRemoteViewsFactory implements RemoteViewsService.RemoteView
         RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.list_widget);
         rv.setTextViewText(R.id.txtViewName, lDet.getName());
         rv.setTextViewText(R.id.txtViewInfo, lDet.getInfo());
-        rv.setTextViewText(R.id.txtViewWaitTime, lDet.getWaitTime() + " mins");
 
         if(lDet.getStatus().equalsIgnoreCase("Done")) {
             int col = mContext.getResources().getColor(R.color.american_dark_green);
             rv.setInt(R.id.status_border, "setBackgroundColor", col);
             rv.setTextColor(R.id.txtViewName,col);
+            rv.setTextViewText(R.id.txtViewWaitTime, "");
+            rv.setInt(R.id.txtViewWaitTime, "setBackgroundResource", R.drawable.checkmark_green_tick);
         } else {
             int col = mContext.getResources().getColor(R.color.american_orange);
             rv.setInt(R.id.status_border, "setBackgroundColor", col);
             rv.setTextColor(R.id.txtViewName,col);
+            rv.setTextViewText(R.id.txtViewWaitTime, lDet.getWaitTime() + " mins");
         }
         switch (position) {
             case 0: rv.setImageViewResource(R.id.row_img, R.drawable.img_checkin); break;
@@ -126,16 +127,7 @@ public class MyWidgetRemoteViewsFactory implements RemoteViewsService.RemoteView
                         try {
                             JSONObject jsonObject = new JSONObject(s);
                             JSONArray array = jsonObject.getJSONArray("arr");
-
-                            for(int i=0; i<array.length(); i++) {
-                                JSONObject o = array.getJSONObject(i);
-                                ListModel listDet = new ListModel();
-                                listDet.setName(o.getString("name"));
-                                listDet.setInfo(o.getString("info"));
-                                listDet.setWaitTime(o.getString("wait_time"));
-                                listDet.setStatus(o.getString("status"));
-                                listDetails.add(listDet);
-                            }
+                            listDetails = AppUtils.getDetails(array);
                             reqComplete = true;
                         } catch (JSONException e) {
                             e.printStackTrace();

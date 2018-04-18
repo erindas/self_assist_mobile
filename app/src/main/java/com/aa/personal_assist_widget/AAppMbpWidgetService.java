@@ -9,15 +9,7 @@ import android.widget.*;
 
 public class AAppMbpWidgetService extends RemoteViewsService
 {
-    public static final String BOARDING_PASS = "com.aa.android.appwidget.BOARDING";
-    public static final String HEADER = "com.aa.android.appwidget.HEADER";
-    public static final String LEFT_ARROW = "com.aa.android.appwidget.LEFT";
-    public static final String MBP_CANCELED = "com.aa.android.appwidget.MBP_CANCELED";
-    public static final String NO_CODE = "com.aa.android.appwidget.NO_CODE";
-    public static final String PACKAGE = "com.aa.android.appwidget.";
-    public static final String RIGHT_ARROW = "com.aa.android.appwidget.RIGHT";
     private static final String TAG;
-    public static final String WIDGET_ITEM_ACTION = "com.aa.android.appwidget.ITEM";
     private static final long WIDGET_UPDATE_DELAY;
     private static final Object sLock;
     private static volatile long sWidgetLastUpdated;
@@ -47,7 +39,6 @@ public class AAppMbpWidgetService extends RemoteViewsService
                 return;
             }
             AAppMbpWidgetService.sWidgetUpdatePending = true;
-            // monitorexit(AAppMbpWidgetService.sLock)
             final long max = Math.max(SystemClock.uptimeMillis(), AAppMbpWidgetService.sWidgetLastUpdated + AAppMbpWidgetService.WIDGET_UPDATE_DELAY);
         }
     }
@@ -80,7 +71,6 @@ public class AAppMbpWidgetService extends RemoteViewsService
             synchronized (AAppMbpWidgetService.sLock) {
                 AAppMbpWidgetService.sWidgetLastUpdated = SystemClock.uptimeMillis();
                 AAppMbpWidgetService.sWidgetUpdatePending = false;
-                // monitorexit(AAppMbpWidgetService.access$100())
                 notifyChanged(this.context);
             }
         }

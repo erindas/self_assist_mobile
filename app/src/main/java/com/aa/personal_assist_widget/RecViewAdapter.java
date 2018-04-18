@@ -43,6 +43,8 @@ public class RecViewAdapter extends RecyclerView.Adapter<RecViewAdapter.ViewHold
             int col = context.getResources().getColor(R.color.american_dark_green);
             holder.txtViewStatus.setBackgroundColor(col);
             holder.txtViewName.setTextColor(col);
+            holder.txtViewWaitTime.setText(lst1.getStatus());
+            holder.txtViewWaitTime.setTextColor(col);
         } else {
             int col = context.getResources().getColor(R.color.american_orange);
             holder.txtViewStatus.setBackgroundColor(col);

@@ -7,13 +7,13 @@ import android.content.Intent;
 import android.graphics.drawable.NinePatchDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -32,8 +32,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import static android.support.v7.widget.DividerItemDecoration.HORIZONTAL;
-
 public class Main2Activity extends AppCompatActivity {
 
     Logger logger = Logger.getLogger(Main2Activity.class.getName());
@@ -45,8 +43,7 @@ public class Main2Activity extends AppCompatActivity {
 
     private Context context = this;
 
-    //private final String SERV_URL = "https://17edc5af.ngrok.io/mobile";
-    private final String SERV_URL = "https://hack-wars-5.herokuapp.com/mobile";
+    private final String SERV_URL = AppConstants.REST_URL_WT + "1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,11 +61,8 @@ public class Main2Activity extends AppCompatActivity {
                 googleAssistIntent.putExtra("query", "Talk to My Agent");
                 PendingIntent googleAssistPendingIntent = PendingIntent.getActivity(context, 0, googleAssistIntent, 0);
                 startActivity(googleAssistIntent);
-                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
             }
         });
-
 
         recyclerView = findViewById(R.id.recycleView2);
         recyclerView.setHasFixedSize(true);
@@ -97,17 +91,7 @@ public class Main2Activity extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = new JSONObject(s);
                             JSONArray array = jsonObject.getJSONArray("arr");
-
-                            for(int i=0; i<array.length(); i++) {
-                                JSONObject o = array.getJSONObject(i);
-                                ListModel listDet = new ListModel();
-                                listDet.setName(o.getString("name"));
-                                listDet.setInfo(o.getString("info"));
-                                listDet.setWaitTime(o.getString("wait_time"));
-                                listDet.setStatus(o.getString("status"));
-                                listDetails.add(listDet);
-                            }
-
+                            listDetails = AppUtils.getDetails(array);
                             rViewAdapter = new RecViewAdapter(listDetails, getApplicationContext());
                             recyclerView.setAdapter(rViewAdapter);
                         } catch (JSONException e) {

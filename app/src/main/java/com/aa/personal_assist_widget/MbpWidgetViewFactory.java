@@ -23,15 +23,12 @@ import java.util.*;
 class MbpWidgetViewFactory implements RemoteViewsService.RemoteViewsFactory
 {
     private static final String TAG;
-    //private Map<String, VenueInfo> airportCodes;
     private Map<String, String> airportCodes;
     private List<BoardingPass> boardingPasses;
     private final Context context;
 
     private boolean reqComplete = false;
-    private List<ListModel> listDetails;
-    //private final String SERV_URL = "http://17edc5af.ngrok.io/mobile";
-    private final String SERV_URL = "https://hack-wars-5.herokuapp.com/mobile";
+    private final String SERV_URL = AppConstants.REST_URL_BP + "1";
 
     static {
         TAG = MbpWidgetViewFactory.class.getSimpleName();
@@ -63,20 +60,7 @@ class MbpWidgetViewFactory implements RemoteViewsService.RemoteViewsFactory
         remoteViews.setOnClickFillInIntent(R.id.widget_mbp_right_button, intent2);
         return remoteViews;
     }
-    
-    private List<BoardingPass> queryBoardingPasses() {
-        List<BoardingPass> boardingPasses = new ArrayList<>();
-        //BoardingPass bp1 = new BoardingPass(context, travelerData.getFirstName(), travelerData.getLastName(), flightData.getPnr(), travelerData.getTravelerID(), segmentData.getFlight(), segmentData.getCheckInInfo().getOriginCode(), buildFlightKey, flightData, segmentData);
-        BoardingPass bp1 = new BoardingPass("1","7201","DFW","SFO","Sunday APR 29, 2018","DELAYED","04:15pm","22A",false,"E","E27");
-        boardingPasses.add(bp1);
-        return boardingPasses;
-        /*return (List<BoardingPass>)DbUtils.query((Class)BoardingPass.class, (DbUtils.QueryHelper)new DbUtils.QueryHelper<BoardingPass>() {
-            public PreparedQuery<BoardingPass> buildQuery(final QueryBuilder<BoardingPass, ?> queryBuilder) throws Exception {
-                return (PreparedQuery<BoardingPass>)queryBuilder.orderBy("depart_date", true).prepare();
-            }
-        });*/
-    }
-    
+
     private void setAirportCodeClickIntent(final RemoteViews remoteViews, final int n, final String s, final boolean b, final boolean b2, final String s2) {
         final Intent intent = new Intent();
         if (b) {
@@ -256,52 +240,48 @@ class MbpWidgetViewFactory implements RemoteViewsService.RemoteViewsFactory
     
     public void onCreate() {
         Log.d(MbpWidgetViewFactory.TAG, "onCreate()");
-        this.boardingPasses = this.queryBoardingPasses();
     }
     
     public void onDataSetChanged() {
         Log.i(MbpWidgetViewFactory.TAG, "onDataSetChanged()");
-        this.boardingPasses = this.queryBoardingPasses();
         final CountDownLatch countDownLatch = new CountDownLatch(1);
-        /*final Locus instance = Locus.getInstance();
-        instance.addListener((Locus.Listener)new Locus.SimpleListener() {
-            public void onAirportVenuesLoaded(@NonNull final Map<String, VenueInfo> map) {
-                instance.removeListener((Locus$Listener)this);
-                MbpWidgetViewFactory.this.airportCodes = map;
-                countDownLatch.countDown();
-            }
-        });
-        instance.loadAirportVenues();*/
-        /*loadRecyclerViewData();
+        requestForBoardingPasses();
         while(!reqComplete) { }
-        reqComplete = false;*/
+        reqComplete = false;
         countDownLatch.countDown();
         this.await(countDownLatch);
-
     }
 
-    private void loadRecyclerViewData() {
-        listDetails = new ArrayList<>();
+    private void requestForBoardingPasses() {
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 SERV_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {
                         try {
-                            JSONObject jsonObject = new JSONObject(s);
-                            JSONArray array = jsonObject.getJSONArray("arr");
+                            JSONObject jsonObj = new JSONObject(s);
+                            JSONArray array = jsonObj.getJSONArray("arr");
+                            boardingPasses = new ArrayList<>();
 
                             for(int i=0; i<array.length(); i++) {
                                 JSONObject o = array.getJSONObject(i);
-                                ListModel listDet = new ListModel();
-                                listDet.setName(o.getString("name"));
-                                listDet.setInfo(o.getString("info"));
-                                listDet.setWaitTime(o.getString("wait_time"));
-                                listDetails.add(listDet);
+                                BoardingPass bPass = new BoardingPass(o.getString("serialNumber"),
+                                        o.getString("flight"),
+                                        o.getString("departAirportCode"),
+                                        o.getString("arriveAirportCode"),
+                                        o.getString("departDate"),
+                                        o.getString("flightStatus"),
+                                        o.getString("departTime"),
+                                        o.getString("seat"),
+                                        Boolean.getBoolean(o.getString("isExitRow")),
+                                        o.getString("departTerminal"),
+                                        o.getString("gate"));
+                                boardingPasses.add(bPass);
                             }
                             reqComplete = true;
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            reqComplete = true;
                         }
                     }
                 },
@@ -309,6 +289,7 @@ class MbpWidgetViewFactory implements RemoteViewsService.RemoteViewsFactory
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(context,error.getMessage(),Toast.LENGTH_LONG);
+                        reqComplete = true;
                     }
                 }
         );
