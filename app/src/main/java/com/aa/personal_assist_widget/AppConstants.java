@@ -6,8 +6,8 @@ package com.aa.personal_assist_widget;
 
 public interface AppConstants {
 
-    String BCKND_HOST_URL = "https://17edc5af.ngrok.io";
-    //String BCKND_HOST_URL = "https://hack-wars-5.herokuapp.com";
+    //String BCKND_HOST_URL = "https://17edc5af.ngrok.io";
+    String BCKND_HOST_URL = "https://hack-wars-5.herokuapp.com";
 
     String REST_URL_WT = BCKND_HOST_URL + "/mobile/";
     String REST_URL_BP = BCKND_HOST_URL + "/boarding_pass/";
