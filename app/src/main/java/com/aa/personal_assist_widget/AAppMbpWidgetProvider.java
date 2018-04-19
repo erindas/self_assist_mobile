@@ -22,15 +22,15 @@ public class AAppMbpWidgetProvider extends AppWidgetProvider
     }
 
     private RemoteViews getWidget(final Context context, final int n) {
+        final RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_mbp);
+        Intent in = new Intent(context, MyWidgetRemoteViewsService.class);
+        remoteViews.setRemoteAdapter(R.id.widgetListView, in);
+
         final Intent intent = new Intent(context, AAppMbpWidgetService.class);
         intent.setData(Uri.parse(intent.toUri(Intent.URI_INTENT_SCHEME)));
         intent.putExtra("appWidgetId", n);
-        final RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_mbp);
         remoteViews.setRemoteAdapter(R.id.widget_flipper, intent);
         remoteViews.setEmptyView(R.id.widget_flipper, R.id.widget_empty_view);
-
-        Intent in = new Intent(context, MyWidgetRemoteViewsService.class);
-        remoteViews.setRemoteAdapter(R.id.widgetListView, in);
 
         Intent clickIntentTemplate = new Intent(context, Main2Activity.class);
         PendingIntent clickPendingIntentTemplate = TaskStackBuilder.create(context)
@@ -84,8 +84,8 @@ public class AAppMbpWidgetProvider extends AppWidgetProvider
         if (action.equals(AppWidgetManager.ACTION_APPWIDGET_UPDATE)) {
             AppWidgetManager mgr = AppWidgetManager.getInstance(context);
             ComponentName cn = new ComponentName(context, AAppMbpWidgetProvider.class);
-            mgr.notifyAppWidgetViewDataChanged(mgr.getAppWidgetIds(cn), R.id.widget_flipper);
             mgr.notifyAppWidgetViewDataChanged(mgr.getAppWidgetIds(cn), R.id.widgetListView);
+            mgr.notifyAppWidgetViewDataChanged(mgr.getAppWidgetIds(cn), R.id.widget_flipper);
         }
         super.onReceive(context, intent);
     }
@@ -100,10 +100,10 @@ public class AAppMbpWidgetProvider extends AppWidgetProvider
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    Log.i("SCHEDULERRRRR", "Running every 30 seconds.....");
+                    Log.i(TAG, "Running every" +  (AppConstants.REFRESH_MILLI_SECS/1000) + "seconds.....");
                     sendRefreshBroadcast(context);
                 }
-            }, 0, 30000);
+            }, 0, AppConstants.REFRESH_MILLI_SECS);
 
         }
     }

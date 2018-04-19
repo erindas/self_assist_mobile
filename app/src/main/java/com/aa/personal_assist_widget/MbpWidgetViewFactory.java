@@ -198,12 +198,15 @@ class MbpWidgetViewFactory implements RemoteViewsService.RemoteViewsFactory
     }
     
     public RemoteViews getViewAt(final int n) {
+        Log.i("MUKESHHHHHHH", "widget_mbp_item view");
         final RemoteViews headerClickIntent = new RemoteViews(this.context.getPackageName(), R.layout.widget_mbp_item);
         this.getEmptyView(headerClickIntent);
         headerClickIntent.setViewVisibility(R.id.widget_mbp_left_button, 8);
         headerClickIntent.setViewVisibility(R.id.widget_mbp_button_spacing, 8);
         headerClickIntent.setViewVisibility(R.id.widget_mbp_flight_info, 0);
         headerClickIntent.setTextViewText(R.id.widget_mbp_right_button, (CharSequence)this.context.getString(R.string.boarding_pass));
+        Log.i("MKKKKKKKKKKKKKK", AppUtils.getTotalTimeReq());
+        headerClickIntent.setTextViewText(R.id.widget_mbp_eta, AppUtils.getTotalTimeReq());
         if (this.boardingPasses.size() > n) {
             final BoardingPass boardingPass = this.boardingPasses.get(n);
             final String upperCase = boardingPass.getFlightStatus().toUpperCase(Locale.US);

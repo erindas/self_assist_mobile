@@ -43,8 +43,6 @@ public class Main2Activity extends AppCompatActivity {
 
     private Context context = this;
 
-    private final String SERV_URL = AppConstants.REST_URL_WT + "1";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +81,7 @@ public class Main2Activity extends AppCompatActivity {
         progressDialog.show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                SERV_URL,
+                AppUtils.URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {

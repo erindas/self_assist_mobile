@@ -16,14 +16,37 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * Created by kummukes on 4/18/2018.
  */
 
 public class AppUtils {
+
+    private static int reqIncrementer = 1;
+    private static String totalTimeReq = "";
+    public static String URL;
+
+    public static String getTotalTimeReq() {
+        return totalTimeReq;
+    }
+
+    public static int getRequestIncrementer() {
+        if(reqIncrementer <= AppConstants.REQ_COUNTS) {
+            return reqIncrementer++;
+        } else {
+            reqIncrementer = 1;
+            return reqIncrementer++;
+        }
+    }
+
+    public static String getReqURL() {
+        URL = AppConstants.REST_URL_WT + AppUtils.getRequestIncrementer();
+        Log.i("URL ==== ", URL);
+        return URL;
+    }
 
     public void sendRequest(String restUrl, final Context context, final StateHolder stateHolder) {
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
@@ -78,6 +101,10 @@ public class AppUtils {
 
     public static List<ListModel> getDetails(JSONArray array) {
         List<ListModel> listDetails = new ArrayList<>();
+        Calendar c = Calendar.getInstance();
+        int hours = 0;
+        int minutes = 0;
+        int totalMins = 0;
         for(int i=0; i<array.length(); i++) {
             JSONObject o = null;
             try {
@@ -88,11 +115,18 @@ public class AppUtils {
                 listDet.setWaitTime(o.getString("wait_time"));
                 listDet.setStatus(o.getString("status"));
                 listDetails.add(listDet);
+                if(!listDet.getStatus().equalsIgnoreCase("Done")) {
+                    totalMins += Integer.valueOf(listDet.getWaitTime());
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
         }
+        hours = totalMins/60;
+        minutes = totalMins%60;
+        totalTimeReq = hours + "hr " + minutes + "mins";
+
         return listDetails;
     }
 

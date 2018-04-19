@@ -35,7 +35,6 @@ public class MyWidgetRemoteViewsFactory implements RemoteViewsService.RemoteView
 
     private boolean reqComplete = false;
     private List<ListModel> listDetails;
-    private final String SERV_URL = AppConstants.REST_URL_WT + "1";
 
     public MyWidgetRemoteViewsFactory(Context applicationContext, Intent intent) {
         mContext = applicationContext;
@@ -65,6 +64,7 @@ public class MyWidgetRemoteViewsFactory implements RemoteViewsService.RemoteView
 
     @Override
     public RemoteViews getViewAt(int position) {
+        Log.i("MUKESHHHHHHH", "List widget view");
         ListModel lDet = listDetails.get(position);
         RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.list_widget);
         rv.setTextViewText(R.id.txtViewName, lDet.getName());
@@ -81,6 +81,7 @@ public class MyWidgetRemoteViewsFactory implements RemoteViewsService.RemoteView
             rv.setInt(R.id.status_border, "setBackgroundColor", col);
             rv.setTextColor(R.id.txtViewName,col);
             rv.setTextViewText(R.id.txtViewWaitTime, lDet.getWaitTime() + " mins");
+            rv.setInt(R.id.txtViewWaitTime, "setBackgroundResource", 0);
         }
         switch (position) {
             case 0: rv.setImageViewResource(R.id.row_img, R.drawable.img_checkin); break;
@@ -120,7 +121,7 @@ public class MyWidgetRemoteViewsFactory implements RemoteViewsService.RemoteView
     private void loadRecyclerViewData() {
         listDetails = new ArrayList<>();
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                SERV_URL,
+                AppUtils.getReqURL(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {

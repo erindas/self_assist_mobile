@@ -12,5 +12,8 @@ public interface AppConstants {
     String REST_URL_WT = BCKND_HOST_URL + "/mobile/";
     String REST_URL_BP = BCKND_HOST_URL + "/boarding_pass/";
 
+    Integer REFRESH_MILLI_SECS = 60000;
+    Integer REQ_COUNTS = 4;
+
 
 }
